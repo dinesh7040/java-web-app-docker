@@ -14,8 +14,8 @@ node{
 	}
 	stage("Docker Login And Push"){
 	    withCredentials([string(credentialsId: 'Dockerhubpwd', variable: 'Dockerhubpwd')]) {
-	     sh "docker login -u dockerhandson -p ${Dockerhubpwd}"
+	     sh "docker login -u samananth -p ${Dockerhubpwd}"
     }
-		 sh "docker push dockerhandson/java-web-app-docker:${buildNumber}"
+		 sh "docker push samananth/java-web-app-docker:${buildNumber}"
 	}
 }
